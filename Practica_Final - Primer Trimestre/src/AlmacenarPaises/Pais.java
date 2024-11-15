@@ -1,29 +1,32 @@
-package PaisesDOM;
+package AlmacenarPaises;
 
-public class Pais {
-    private String nombre;
-    private String presidente;
+import java.io.Serializable;
+
+public class Pais implements Serializable{
+    private static final long serialVersionUID = 1L;
+    private String Nombre;
+    private String Presidente;
     private long PIB;
     private double CoeficienteDeGini;
 
     public Pais(String nombre, String presidente, long PIB, double coeficienteDeGini) {
-        this.nombre = nombre;
-        this.presidente = presidente;
+        this.Nombre = nombre;
+        this.Presidente = presidente;
         this.PIB = PIB;
-        CoeficienteDeGini = coeficienteDeGini;
+        this.CoeficienteDeGini = coeficienteDeGini;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.Nombre = nombre;
     }
     public String getPresidente() {
-        return presidente;
+        return Presidente;
     }
     public void setPresidente(String presidente) {
-        this.presidente = presidente;
+        this.Presidente = presidente;
     }
     public long getPIB() {
         return PIB;
@@ -32,17 +35,17 @@ public class Pais {
         this.PIB = PIB;
     }
     public double getCoeficienteDeGini() {
-        return CoeficienteDeGini;
+        return this.CoeficienteDeGini;
     }
     public void setCoeficienteDeGini(double coeficienteDeGini) {
-        CoeficienteDeGini = coeficienteDeGini;
+        this.CoeficienteDeGini = coeficienteDeGini;
     }
 
     @Override
     public String toString() {
         return "Pais: " +
-                "Nombre:'" + nombre + '\'' +
-                "Presidente: " + presidente + '\'' +
+                "Nombre:'" + Nombre + '\'' +
+                "Presidente: " + Presidente + '\'' +
                 "PIB: " + PIB +
                 "Coeficiente de Gini:" + CoeficienteDeGini;
     }
