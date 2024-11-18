@@ -2,18 +2,16 @@ package PaisesDOM;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.EOFException;
 import java.io.File;
 
 public class GenerarXMLDOM {
@@ -29,7 +27,7 @@ public class GenerarXMLDOM {
         Element rootElement = doc.createElement("Paises");
         doc.appendChild(rootElement);
 
-        for (int i = 0; i<nombre.length;i++){
+        for (int i = 0; i < nombre.length; i++) {
             Element pais = doc.createElement("Pais");
 
             Element nombreNodo = doc.createElement("Nombre");
@@ -54,6 +52,9 @@ public class GenerarXMLDOM {
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
         StreamResult result = new StreamResult(new File("Paises.xml"));
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+        transformer.setOutputProperty("{http://xml.apache.org /xslt}indent-amount", "4");
         transformer.transform(source, result);
 
         System.out.println("Archivo 'Paises.xml' generado exitosamente.");
