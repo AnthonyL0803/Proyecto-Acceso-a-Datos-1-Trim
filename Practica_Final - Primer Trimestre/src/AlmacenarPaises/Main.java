@@ -9,7 +9,7 @@ import com.thoughtworks.xstream.security.PrimitiveTypePermission;
 Introduce en el Proyect structure > Module > jar = kxml y el xstream
  */
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         XStream xstream = new XStream();
         FileInputStream fis = new FileInputStream("Paises.xml");
 
@@ -37,5 +37,10 @@ public class Main {
         for (Pais pais : listaPaises.getPais()) {
             System.out.println(pais);
         }
+
+        //En este paso creamos el fichero .dat
+        PaisesBinario paisesBinario = new PaisesBinario();
+        paisesBinario.crearFicheroDat(listaPaises);
+
     }
 }
