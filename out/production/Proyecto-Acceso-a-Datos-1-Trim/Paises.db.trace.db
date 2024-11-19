@@ -13,3 +13,19 @@ Column "Coeficiente de Gini" not found [42122-214]
 	at org.h2.jdbc.JdbcResultSet.getDouble(JdbcResultSet.java:843)
 	at AlmacenarPaises.DAOPaises.mostrarTabla(DAOPaises.java:55)
 	at AlmacenarPaises.Main.main(Main.java:37)
+2024-11-19 15:52:14 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor Invalido "2" para el parametro "parameterIndex"
+Invalid value "2" for parameter "parameterIndex" [90008-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:646)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:298)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1395)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:378)
+	at AlmacenarPaises.DAOPaises.existePais(DAOPaises.java:27)
+	at AlmacenarPaises.DAOPaises.insertarPais(DAOPaises.java:36)
+	at AlmacenarPaises.Main.main(Main.java:34)
+2024-11-19 15:53:50 jdbc[21]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "UPDATE TABLAPAISES SET COEFICIENTEDEGINI = ((COEFICIENTEDEGINI/3) + (COEFICIENTEDEGINI/3) [*]WHERE NOMBRE = 'El Salvador' OR NOMBRE = 'Honduras' OR NOMBRE = 'México'"; se esperaba "., [, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"
+Syntax error in SQL statement "UPDATE TABLAPAISES SET COEFICIENTEDEGINI = ((COEFICIENTEDEGINI/3) + (COEFICIENTEDEGINI/3) [*]WHERE NOMBRE = 'El Salvador' OR NOMBRE = 'Honduras' OR NOMBRE = 'México'"; expected "., [, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+UPDATE TABLAPAISES SET COEFICIENTEDEGINI = ((COEFICIENTEDEGINI/3) + (COEFICIENTEDEGINI/3) WHERE NOMBRE = 'El Salvador' OR NOMBRE = 'Honduras' OR NOMBRE = 'México' [42001-214]

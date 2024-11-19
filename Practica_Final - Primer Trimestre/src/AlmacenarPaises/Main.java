@@ -36,7 +36,16 @@ public class Main {
         System.out.println("\n");
         daoPaises.mostrarTabla();
         System.out.println("\n");
+
         daoPaises.incrementarPIB();
+        System.out.println("\n");
+        daoPaises.mostrarTabla();
+        System.out.println("\n");
+
+        daoPaises.reduccionCoeficienteDeGini();
+        System.out.println("\n");
+        daoPaises.mostrarTabla();
+        System.out.println("\n");
 
     }
 }

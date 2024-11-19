@@ -22,11 +22,8 @@ public class DAOPaises {
 
     public boolean existePais(Pais a) throws SQLException {
         Connection conexion = DriverManager.getConnection(this.url);
-        PreparedStatement sentencia = conexion.prepareStatement("SELECT * FROM TABLAPAISES WHERE NOMBRE = ? AND PRESIDENTE = ? AND PIB = ? AND COEFICIENTEDEGINI = ?");
+        PreparedStatement sentencia = conexion.prepareStatement("SELECT * FROM TABLAPAISES WHERE NOMBRE = ?");
         sentencia.setString(1, a.getNombre());                   // NOMBRE
-        sentencia.setString(2, a.getPresidente());               // PRESIDENTE
-        sentencia.setLong(3, a.getPIB());                        // PIB
-        sentencia.setDouble(4, a.getCoeficienteDeGini());        // COEFICIENTEDEGINI
         ResultSet result = sentencia.executeQuery();
         return result.next();
     }
@@ -49,11 +46,11 @@ public class DAOPaises {
         PreparedStatement sentencia = conexion.prepareStatement("SELECT * FROM TABLAPAISES");
         ResultSet resultado = sentencia.executeQuery();
         while (resultado.next()) {
+            System.out.println("\nSiguiente país: ");
             System.out.print(resultado.getString("NOMBRE") + " ");
             System.out.print(resultado.getString("PRESIDENTE") + " ");
             System.out.print(resultado.getLong("PIB") + " ");
             System.out.print(resultado.getDouble("COEFICIENTEDEGINI") + " ");
-            System.out.println("Siguiente país: ");
         }
     }
 
@@ -66,7 +63,9 @@ public class DAOPaises {
 
     public void reduccionCoeficienteDeGini() throws SQLException {
         Connection conexion = DriverManager.getConnection(this.url);
-        PreparedStatement sentencia = conexion.prepareStatement("UPDATE TABLAPAISES SET COEFICIENTEDEGINI = ((COEFICIENTEDEGINI/3) + (COEFICIENTEDEGINI/3) WHERE NOMBRE = 'El Salvador' OR NOMBRE = 'Honduras' OR NOMBRE = 'México'");
+        PreparedStatement sentencia = conexion.prepareStatement("UPDATE TABLAPAISES " +
+                "SET COEFICIENTEDEGINI = COEFICIENTEDEGINI * 2 / 3 " +
+                "WHERE NOMBRE = 'El Salvador' OR NOMBRE = 'Honduras' OR NOMBRE = 'México'");
         sentencia.execute();
         conexion.close();
     }
