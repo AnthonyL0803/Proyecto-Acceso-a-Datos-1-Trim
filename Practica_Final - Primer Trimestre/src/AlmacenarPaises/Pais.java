@@ -2,51 +2,51 @@ package AlmacenarPaises;
 
 import java.io.Serializable;
 
-public class Pais implements Serializable{
+public class Pais implements Serializable {
     private static final long serialVersionUID = 1L;
-    private String Nombre;
-    private String Presidente;
-    private long PIB;
-    private double CoeficienteDeGini;
+    private String nombre;
+    private String presidente;
+    private long pib;
+    private double coeficienteDeGini;
 
-    public Pais(String nombre, String presidente, long PIB, double coeficienteDeGini) {
-        this.Nombre = nombre;
-        this.Presidente = presidente;
-        this.PIB = PIB;
-        this.CoeficienteDeGini = coeficienteDeGini;
+    public Pais(String nombre, String presidente, long pib, double coeficienteDeGini) {
+        this.nombre = nombre;
+        this.presidente = presidente;
+        this.pib = pib;
+        this.coeficienteDeGini = coeficienteDeGini;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
     public void setNombre(String nombre) {
-        this.Nombre = nombre;
+        this.nombre = nombre;
     }
     public String getPresidente() {
-        return Presidente;
+        return presidente;
     }
     public void setPresidente(String presidente) {
-        this.Presidente = presidente;
+        this.presidente = presidente;
     }
-    public long getPIB() {
-        return PIB;
+    public long getPib() {
+        return pib;
     }
-    public void setPIB(long PIB) {
-        this.PIB = PIB;
+    public void setPib(long pib) {
+        this.pib = pib;
     }
     public double getCoeficienteDeGini() {
-        return this.CoeficienteDeGini;
+        return coeficienteDeGini;
     }
     public void setCoeficienteDeGini(double coeficienteDeGini) {
-        this.CoeficienteDeGini = coeficienteDeGini;
+        this.coeficienteDeGini = coeficienteDeGini;
     }
 
     @Override
     public String toString() {
         return "Pais: " +
-                "Nombre:'" + Nombre + '\'' +
-                "Presidente: " + Presidente + '\'' +
-                "PIB: " + PIB +
-                "Coeficiente de Gini:" + CoeficienteDeGini;
+                "Nombre:'" + nombre + '\'' +
+                "Presidente: " + presidente + '\'' +
+                "PIB: " + pib +
+                "Coeficiente de Gini:" + coeficienteDeGini;
     }
 }

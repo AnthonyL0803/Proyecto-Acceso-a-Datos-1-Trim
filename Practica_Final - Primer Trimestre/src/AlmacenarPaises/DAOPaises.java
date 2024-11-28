@@ -34,7 +34,7 @@ public class DAOPaises {
             PreparedStatement sentencia = conexion.prepareStatement("INSERT INTO TABLAPAISES VALUES(?, ?, ?, ?)");
             sentencia.setString(1, a.getNombre());                // NOMBRE
             sentencia.setString(2, a.getPresidente());            //PRESIDENTE
-            sentencia.setLong(3, a.getPIB());                     // PIB
+            sentencia.setLong(3, a.getPib());                     // PIB
             sentencia.setDouble(4, a.getCoeficienteDeGini());     // COEFICIENTEDEGINI
             sentencia.execute();
             conexion.close();

@@ -19,7 +19,4 @@ public class ListaPaises implements Serializable {
     public void setPaises(List<Pais> paises) {
         this.paises = paises;
     }
-
-
-
 }

@@ -30,19 +30,19 @@ public class GenerarXMLDOM {
         for (int i = 0; i < nombre.length; i++) {
             Element pais = doc.createElement("Pais");
 
-            Element nombreNodo = doc.createElement("Nombre");
+            Element nombreNodo = doc.createElement("nombre");
             nombreNodo.appendChild(doc.createTextNode(nombre[i]));
             pais.appendChild(nombreNodo);
 
-            Element presidenteNodo = doc.createElement("Presidente");
+            Element presidenteNodo = doc.createElement("presidente");
             presidenteNodo.appendChild(doc.createTextNode(presidente[i]));
             pais.appendChild(presidenteNodo);
 
-            Element PIBNodo = doc.createElement("PIB");
+            Element PIBNodo = doc.createElement("pib");
             PIBNodo.appendChild(doc.createTextNode(PIB[i]));
             pais.appendChild(PIBNodo);
 
-            Element CoeficienteDeGiniNodo = doc.createElement("CoeficienteDeGini");
+            Element CoeficienteDeGiniNodo = doc.createElement("coeficienteDeGini");
             CoeficienteDeGiniNodo.appendChild(doc.createTextNode(CoeficienteDeGini[i]));
             pais.appendChild(CoeficienteDeGiniNodo);
 

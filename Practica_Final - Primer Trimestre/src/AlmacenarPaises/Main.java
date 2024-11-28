@@ -12,7 +12,7 @@ Introduce en el Proyect structure > Module > jar = kxml y el xstream
  */
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException {
-        XStream xstream = new XStream();
+        XStream xstream = new XStream(); //Convertimos objeto en xml, esos datos en el xml, tienes que tener la clase.
         FileInputStream fis = new FileInputStream("Paises.xml");
         ListaPaises listaPaises = new ListaPaises();
         DAOPaises daoPaises = new DAOPaises();
